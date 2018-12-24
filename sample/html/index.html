@@ -21,7 +21,41 @@
     <div id="app-3">
       <span v-if="seen">Now you see me</span>
     </div>
-
+    <br />
+    <!-- 繰り返し -->
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+    <br />
+    <!-- メソッド利用 -->
+    <div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+      <button v-on:click="changeHW">Change Hello World!</button>
+    </div>
+    <br />
+    <!-- 双方向バインディング -->
+    <div id="app-6">
+      <p>
+        {{ message }}
+      </p>
+      <input v-model="message">
+    </div>
+    <br />
+    <!-- コンポーネント -->
+    <div id="app-7">
+      <ol>
+        <todo-item
+            v-for="item in groceryList"
+            v-bind:todo="item"
+            v-bind:key="item.id"></todo-item>
+      </ol>
+    </div>
+    <!-- JavaScript -->
     <script type="text/javascript" src="../js/vue.js"></script>
     <script type="text/javascript" src="../js/sample.js"></script>
     </body>
