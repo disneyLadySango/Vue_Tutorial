@@ -4,8 +4,22 @@
     <title>Sample Project</title>
   </head>
   <body>
+    <!-- Js側で定義したメッセージを表示  -->
     <div id="app">
       {{message}}
+    </div>
+    <br />
+    <!-- Titleに設定した情報を表示 -->
+    <div id='app-2'>
+      <span v-bind:title='message'>
+        Hover your mouse over me for a few seconds
+        to see my dynamically bound title!
+      </span>
+    </div>
+    <br />
+    <!-- 条件分岐 -->
+    <div id="app-3">
+      <span v-if="seen">Now you see me</span>
     </div>
 
     <script type="text/javascript" src="../js/vue.js"></script>
